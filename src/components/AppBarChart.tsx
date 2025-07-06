@@ -10,11 +10,11 @@ import { Bar, BarChart, CartesianGrid, XAxis, YAxis } from "recharts";
 const chartConfig = {
   desktop: {
     label: "Desktop",
-    color: "var(--chart-1)",
+    color: "var(--chart-2)",
   },
   mobile: {
     label: "Mobile",
-    color: "var(--chart-2)",
+    color: "var(--chart-1)",
   },
 } satisfies ChartConfig;
 
@@ -47,8 +47,6 @@ const AppBarChart = () => {
           <YAxis tickLine={false} tickMargin={10} axisLine={false} />
 
           <ChartTooltip content={<ChartTooltipContent />} />
-
-          {/* <ChartLegend content={<ChartLegendContent />} /> */}
 
           <Bar dataKey="desktop" fill="var(--color-desktop)" radius={4} />
           <Bar dataKey="mobile" fill="var(--color-mobile)" radius={4} />
