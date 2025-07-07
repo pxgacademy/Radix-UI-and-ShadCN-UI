@@ -1,7 +1,9 @@
 "use client";
-import Link from "next/link";
 import { LogOut, Moon, Settings, Sun, User } from "lucide-react";
+import { useTheme } from "next-themes";
+import Link from "next/link";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
+import { Button } from "./ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -10,9 +12,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "./ui/dropdown-menu";
-import { Button } from "./ui/button";
-import { useTheme } from "next-themes";
-import { SidebarTrigger, useSidebar } from "./ui/sidebar";
+import { SidebarTrigger } from "./ui/sidebar";
 
 const Navbar = () => {
   const { setTheme } = useTheme();
@@ -30,6 +30,8 @@ const Navbar = () => {
       {/* Right */}
       <div className="flex items-center gap-x-4">
         <Link href="/">Dashboard</Link>
+        <Link href="/users/id">User</Link>
+        <Link href="/payments">Payments</Link>
 
         {/* THEME MENU */}
         <DropdownMenu>
