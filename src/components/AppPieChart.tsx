@@ -11,12 +11,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import {
-  ChartConfig,
-  ChartContainer,
-  ChartTooltip,
-  ChartTooltipContent,
-} from "@/components/ui/chart";
+import { ChartConfig, ChartContainer } from "@/components/ui/chart";
 
 export const description = "A donut chart with text";
 
@@ -66,10 +61,10 @@ export default function AppPieChart() {
       <CardContent className="flex-1 pb-0">
         <ChartContainer config={chartConfig} className="mx-auto aspect-square ">
           <PieChart>
-            <ChartTooltip
+            {/* <ChartTooltip
               cursor={false}
               content={<ChartTooltipContent hideLabel />}
-            />
+            /> */}
             <Pie
               data={chartData}
               dataKey="visitors"
