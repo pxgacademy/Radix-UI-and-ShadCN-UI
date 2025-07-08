@@ -101,7 +101,7 @@ ${colorConfig
     />
   );
 };
-/*
+
 const ChartTooltip = RechartsPrimitive.Tooltip;
 
 function ChartTooltipContent({
@@ -247,7 +247,7 @@ function ChartTooltipContent({
     </div>
   );
 }
-*/
+
 const ChartLegend = RechartsPrimitive.Legend;
 
 function ChartLegendContent({
@@ -343,4 +343,11 @@ function getPayloadConfigFromPayload(
     : config[key as keyof typeof config];
 }
 
-export { ChartContainer, ChartLegend, ChartLegendContent, ChartStyle };
+export {
+  ChartContainer,
+  ChartLegend,
+  ChartLegendContent,
+  ChartStyle,
+  ChartTooltip,
+  ChartTooltipContent,
+};
