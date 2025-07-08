@@ -1,36 +1,129 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Next.js + ShadCN UI Practice Project
 
-## Getting Started
+This project is a practice playground to explore and implement modern UI components using **ShadCN UI** in a **Next.js 15 (App Router)** application with **Tailwind CSS v4** and **React 19**.
 
-First, run the development server:
+## 🔗 Live Demo
+
+[https://radix-ui-and-shad-cn-ui.vercel.app](https://radix-ui-and-shad-cn-ui.vercel.app)
+
+## 📦 GitHub Repository
+
+[https://github.com/pxgacademy/Radix-UI-and-ShadCN-UI](https://github.com/pxgacademy/Radix-UI-and-ShadCN-UI)
+
+---
+
+## 🛠️ Features
+
+This project demonstrates usage of various components from **ShadCN UI**, integrated with **Radix UI** primitives and custom Tailwind styling.
+
+### ✅ ShadCN Components Used
+
+- `Avatar`
+- `Badge`
+- `Breadcrumb`
+- `Button`
+- `Calendar`
+- `Card`
+- `Chart`
+- `Checkbox`
+- `Collapsible`
+- `Dropdown Menu`
+- `Form`
+- `Hover Card`
+- `Input`
+- `Label`
+- `Popover`
+- `Progress`
+- `Scroll Area`
+- `Select`
+- `Separator`
+- `Sheet`
+- `Sidebar`
+- `Skeleton`
+- `Table`
+- `Tooltip`
+
+---
+
+## 📚 Tech Stack
+
+- **Next.js 15** (App Router with Turbopack)
+- **React 19**
+- **Tailwind CSS v4**
+- **TypeScript**
+- **Lucide React** (Icons)
+- **React Hook Form** + Zod (Form validation)
+- **Date-FNS** (Date utilities)
+- **Recharts** (Charts)
+- **Radix UI** (Low-level UI primitives)
+- **TanStack Table v8** (Advanced table handling)
+- **Patch-package** (for patching issues with dependencies)
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the Repository
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/pxgacademy/Radix-UI-and-ShadCN-UI.git
+cd Radix-UI-and-ShadCN-UI
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Install Dependencies
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Using `pnpm`:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+pnpm install
+```
 
-## Learn More
+Or with `npm`:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm install
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Or with `yarn`:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+yarn install
+```
 
-## Deploy on Vercel
+### 3. Start Development Server
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+pnpm run dev
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Then open `http://localhost:3000` in your browser.
+
+---
+
+## ⚠️ Deployment Issue Faced
+
+While deploying to **Vercel**, the app initially failed due to `patch-package` being required **after install**. The issue was resolved by adding:
+
+```json
+"scripts": {
+  "postinstall": "patch-package",
+  "prepare": "patch-package"
+}
+```
+
+This ensures that patched dependencies are applied correctly during the build process on Vercel.
+
+---
+
+## 📄 License
+
+This project is for **educational and practice purposes**. Feel free to explore and learn.
+
+---
+
+## 🙌 Acknowledgements
+
+- [Next.js](https://nextjs.org/)
+- [ShadCN UI](https://ui.shadcn.dev/)
+- [Radix UI](https://www.radix-ui.com/)
+- [Tailwind CSS](https://tailwindcss.com/)
