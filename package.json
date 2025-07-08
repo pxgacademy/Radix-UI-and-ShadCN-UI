@@ -3,11 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "postinstall": "patch-package",
+    "prepare": "patch-package",
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "postinstall": "patch-package",
-    "prepare": "patch-package",
     "lint": "next lint"
   },
   "dependencies": {

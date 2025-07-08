@@ -9,6 +9,19 @@ import { Checkbox } from "./ui/checkbox";
 import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
 import { ScrollArea } from "./ui/scroll-area";
 
+const todoList = [
+  { id: "a1x9b2", title: "Buy groceries" },
+  { id: "k4m2z8", title: "Finish project" },
+  { id: "t7q3n5", title: "Call mom" },
+  { id: "p2c6v1", title: "Book appointment" },
+  { id: "z9r1w3", title: "Read a book" },
+  { id: "b8e4s7", title: "Clean the room" },
+  { id: "h3k6l9", title: "Pay bills" },
+  { id: "m5u2n0", title: "Workout" },
+  { id: "y7v3x6", title: "Reply to emails" },
+  { id: "d1q8t4", title: "Plan weekend" },
+];
+
 const TodoList = () => {
   const [date, setDate] = useState<Date | undefined>(new Date());
   const [open, setOpen] = useState<boolean>(false);
@@ -18,7 +31,7 @@ const TodoList = () => {
       <h1 className="text-lg font-medium mb-6">Todo List</h1>
       <Popover open={open} onOpenChange={setOpen}>
         <PopoverTrigger asChild>
-          <Button className="w-full">
+          <Button className="w-full cursor-pointer">
             <CalendarIcon />
             {date ? format(date, "PPP") : "Pick a date"}
           </Button>
@@ -40,22 +53,16 @@ const TodoList = () => {
       <ScrollArea className="h-[400px] mt-4">
         <div className="space-y-2">
           {/* LIST ITEM */}
-          <Card className="p-4">
-            <div className="flex items-center gap-4">
-              <Checkbox id="item1" />
-              <label htmlFor="item1" className="text-sm text-muted-foreground">
-                Click Me
-              </label>
-            </div>
-          </Card>
-          <Card className="p-4">
-            <div className="flex items-center gap-4">
-              <Checkbox id="item2" />
-              <label htmlFor="item2" className="text-sm text-muted-foreground">
-                Click Me
-              </label>
-            </div>
-          </Card>
+          {todoList.map(({ title, id }) => (
+            <Card className="p-4" key={id}>
+              <div className="flex items-center gap-4">
+                <Checkbox id={id} />
+                <label htmlFor={id} className="text-sm text-muted-foreground">
+                  {title}
+                </label>
+              </div>
+            </Card>
+          ))}
         </div>
       </ScrollArea>
     </div>
